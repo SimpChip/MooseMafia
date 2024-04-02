@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cq8sffrvbb417" path="res://hero.png" id="1_wwdrb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spgnl"]
-size = Vector2(16, 16)
+size = Vector2(10, 15)
 
 [sub_resource type="Animation" id="Animation_byimi"]
 resource_name = "walk_left"
@@ -161,7 +161,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_adog1"]
 resource_name = "idle_left"
-length = 0.1
+length = 0.4
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -172,12 +173,13 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [9]
 }
 
 [sub_resource type="Animation" id="Animation_q0uud"]
 resource_name = "idle_right"
-length = 0.1
+length = 0.4
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -188,11 +190,11 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [10]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("Sprite2D:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -289,16 +291,17 @@ transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_
 [node name="PlayerMan" type="CharacterBody2D"]
 position = Vector2(-2, 0)
 script = ExtResource("1_8fe42")
-move_speed = 50.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_spgnl")
+move_speed = null
+starting_direction = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_wwdrb")
 hframes = 3
 vframes = 4
 frame = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_spgnl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -313,5 +316,5 @@ tree_root = SubResource("AnimationNodeStateMachine_h13dh")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/is_idle = false
 parameters/conditions/is_moving = false
-parameters/Idle/blend_position = Vector2(0, 0)
-parameters/Walk/blend_position = Vector2(0, 0)
+parameters/Idle/blend_position = Vector2(-0.00428659, 0.56696)
+parameters/Walk/blend_position = Vector2(-0.244336, 0.411894)
