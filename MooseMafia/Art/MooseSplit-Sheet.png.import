@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djtobjga2bm17"
-path="res://.godot/imported/transparent-bg-tiles.png-6aaf81694fe836203f30a391afcfd24f.ctex"
+uid="uid://di78aabji8thk"
+path="res://.godot/imported/MooseSplit-Sheet.png-4fc6f57e6f1e8fc225caff00f0955481.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://transparent-bg-tiles.png"
-dest_files=["res://.godot/imported/transparent-bg-tiles.png-6aaf81694fe836203f30a391afcfd24f.ctex"]
+source_file="res://Art/MooseSplit-Sheet.png"
+dest_files=["res://.godot/imported/MooseSplit-Sheet.png-4fc6f57e6f1e8fc225caff00f0955481.ctex"]
 
 [params]
 

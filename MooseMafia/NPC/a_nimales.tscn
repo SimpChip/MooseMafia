@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://doaal0uodn62h"]
+
+[ext_resource type="Script" path="res://NPC/a_nimales.gd" id="1_8g2ws"]
+[ext_resource type="Texture2D" uid="uid://y1tkide2wpa6" path="res://Art/pixil-frame-0 (8).png" id="2_dsubj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6l0th"]
+radius = 22.561
+
+[node name="Cow" type="CharacterBody2D"]
+script = ExtResource("1_8g2ws")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_dsubj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6l0th")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
