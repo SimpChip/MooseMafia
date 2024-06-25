@@ -3,17 +3,19 @@
 [ext_resource type="Script" path="res://NPC/a_nimales.gd" id="1_8g2ws"]
 [ext_resource type="Texture2D" uid="uid://y1tkide2wpa6" path="res://Art/pixil-frame-0 (8).png" id="2_dsubj"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6l0th"]
-radius = 22.561
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubjfa"]
+size = Vector2(30, 11.5)
 
 [node name="Cow" type="CharacterBody2D"]
+z_index = -2
 script = ExtResource("1_8g2ws")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_dsubj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_6l0th")
+position = Vector2(3, 13.25)
+shape = SubResource("RectangleShape2D_ubjfa")
 
 [node name="Timer" type="Timer" parent="."]
 
