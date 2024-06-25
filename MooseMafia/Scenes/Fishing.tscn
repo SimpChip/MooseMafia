@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cea41vhjdailh"]
+
+[ext_resource type="Script" path="res://Scenes/Fishing.gd" id="1_kips1"]
+[ext_resource type="Texture2D" uid="uid://x07ia8j7mfub" path="res://Art/fish_tiles.png" id="2_p3tu6"]
+[ext_resource type="Script" path="res://Scenes/FishingRod.gd" id="2_xituy"]
+[ext_resource type="Script" path="res://Scenes/FishingLine.gd" id="3_gx64x"]
+
+[node name="Fishing" type="Node2D"]
+script = ExtResource("1_kips1")
+
+[node name="FishingRod" type="Node2D" parent="."]
+script = ExtResource("2_xituy")
+
+[node name="Sprite2D" type="Sprite2D" parent="FishingRod"]
+position = Vector2(27, -2)
+texture = ExtResource("2_p3tu6")
+region_enabled = true
+region_rect = Rect2(64, 0, 32, 32)
+
+[node name="TopRod" type="Marker2D" parent="FishingRod/Sprite2D"]
+position = Vector2(9, -14)
+scale = Vector2(4.06982, -2.14749)
+
+[node name="FishingLine" type="Node2D" parent="."]
+script = ExtResource("3_gx64x")
+
+[node name="Bobber" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Bobber"]
+texture = ExtResource("2_p3tu6")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 32)
