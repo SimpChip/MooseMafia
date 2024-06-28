@@ -21,12 +21,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if is_casting:
-		cast_throw(delta)
+		cast_throw(delta, $Sprite2D/TopRod.global_position)
+		draw_fishing_line()
 	
 	$Sprite2D.position = $"../../Camera2D".get_screen_center_position() + Vector2(15, -10)
 	
 
-func cast_throw(delta):
+func cast_throw(delta, pos):
 	if elapsed_cast_time > cast_length:
 		return
 	
@@ -38,10 +39,9 @@ func cast_throw(delta):
 	var y_offset = launch_velocity * elapsed_cast_time * sin(launch_angle) - 0.5 * GRAVITY * pow(elapsed_cast_time, 2)
 	y_offset *= -1
 	
-	print("START: " + str(start_pos))
+	#print("START: " + str(start_pos))
 	$"../Bobber".position = start_pos + Vector2(x_offset, y_offset)
-	
-	draw_fishing_line()
+	#$"../Bobber".position = pos + Vector2(x_offset, y_offset)
 
 
 func throw(_start_pos, _end_pos):
@@ -80,7 +80,8 @@ func draw_fishing_line():
 	var _cast_direction
 	var _initial_pos = $Sprite2D/TopRod.global_position
 	var _target_pos = $"../Bobber".global_position
-	if (_target_pos.x > 0):
+	
+	if (_target_pos.x - _initial_pos.x > 0):
 		_cast_direction = 1
 	else:
 		_cast_direction = -1
@@ -100,8 +101,8 @@ func draw_fishing_line():
 		var y = a * pow(distance_traveled, 2)
 		_line_points.append(Vector2(distance_traveled, y) + _target_pos)
 
-		distance_traveled += _step * -cast_direction
+		distance_traveled += _step * -_cast_direction
 		
-	_line_points[_line_points.size() - 1] = start_pos
+	_line_points[_line_points.size() - 1] = $Sprite2D/TopRod.global_position
 	$"../FishingLine".update_line_points(_line_points)
 	

@@ -16,4 +16,5 @@ func _input(event):
 			
 			var start: Vector2 = $FishingRod/Sprite2D/TopRod.global_position
 			var end: Vector2 = top_left+event.position
+			#var end: Vector2 = event.global_position
 			$FishingRod.throw(start, end)

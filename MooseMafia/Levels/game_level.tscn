@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bp12xdfpp56gt"]
+[gd_scene load_steps=14 format=3 uid="uid://bp12xdfpp56gt"]
 
 [ext_resource type="PackedScene" uid="uid://yy18x53x0cuc" path="res://Characters/PlayerBlob_2d.tscn" id="1_akv5g"]
 [ext_resource type="Texture2D" uid="uid://c0drm3wtej53w" path="res://Art/GrASSAASS.png" id="2_b6unk"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://doaal0uodn62h" path="res://NPC/a_nimales.tscn" id="3_n3p58"]
 [ext_resource type="PackedScene" uid="uid://br6wflojaihp3" path="res://Moose.tscn" id="4_1tbys"]
 [ext_resource type="Texture2D" uid="uid://dv0kirrsagvru" path="res://Art/GrassCorners.png" id="4_stcwl"]
+[ext_resource type="PackedScene" uid="uid://cea41vhjdailh" path="res://Scenes/Fishing.tscn" id="7_s1bed"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m3qsn"]
 texture = ExtResource("2_b6unk")
@@ -155,7 +156,6 @@ texture = ExtResource("2_b6unk")
 7:5/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gddw6"]
-load_path = "res://.godot/imported/Water.png-ccc605df2696771fdc6098b87a5fd6c3.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n48ll"]
 texture = SubResource("CompressedTexture2D_gddw6")
@@ -1541,3 +1541,5 @@ position = Vector2(197, 240)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_1tbys")]
 position = Vector2(-33, 43)
+
+[node name="Fishing" parent="." instance=ExtResource("7_s1bed")]

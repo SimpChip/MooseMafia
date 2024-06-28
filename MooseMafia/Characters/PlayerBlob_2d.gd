@@ -27,6 +27,6 @@ func _physics_process(_delta):
 	
 func update_animation_parameter( move_input : Vector2):
 	if(move_input != Vector2.ZERO):
-		print(move_input)
+		#print(move_input)
 		animation_tree.set("parameters/Walk/blend_position", move_input)
 		animation_tree.set("parameters/Idle/blend_position", move_input)
